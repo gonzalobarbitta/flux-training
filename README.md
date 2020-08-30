@@ -43,3 +43,10 @@ Flux can also be used to automate container image updates in your cluster, and i
 One way to enable this feature is by annotating your deployments using `fluxcd.io/automated: "true"`.
 
 You can also use `fluxcd.io/tag.app: semver:~1.0` to instruct flux to only update the image when you push an image tag that matches the semantic version expression e.g cloud-sample:1.0.1 but not cloud-sample:1.2.0.
+
+In my case, I am using a public repository in docker hub. Therefore, for tagging and pushing a new image I use:
+
+```
+docker build -t gonzalobarbitta/cloud-training:1.0.1 .
+docker push gonzalobarbitta/cloud-training:1.0.1
+```
