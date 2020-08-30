@@ -6,6 +6,8 @@ metadata:
   namespace: cloud-training
   labels:
     app: cloud-training
+  annotations:
+    fluxcd.io/automated: "true"
 spec:
   selector:
     matchLabels:
