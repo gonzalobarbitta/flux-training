@@ -16,7 +16,6 @@ kubectl create ns flux
 ```
 export GHUSER="gonzalobarbitta"
 fluxctl install \
---git-user=${GHUSER} \
 --git-email=${GHUSER}@users.noreply.github.com \
 --git-url=git@github.com:${GHUSER}/flux-training \
 --git-path=workloads \
