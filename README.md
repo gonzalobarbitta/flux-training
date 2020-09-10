@@ -22,6 +22,8 @@ fluxctl install \
 --namespace=flux | kubectl apply -f -
 ```
 
+Wait for Flux to start by running `kubectl -n flux rollout status deployment/flux`
+
 ### Sync cluster with Git repository
 
 Flux's main feature is the automated synchronisation between a version control repository and a cluster. In other words, if you make any changes to your repository, those changes are automatically deployed to your cluster.
