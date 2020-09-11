@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: cloud-training
-        image: gonzalobarbitta/cloud-training:1.0.5
+        image: gonzalobarbitta/cloud-training:1.0.6
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
