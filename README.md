@@ -24,6 +24,11 @@ fluxctl install \
 
 Wait for Flux to start by running `kubectl -n flux rollout status deployment/flux`
 
+### Give write access
+
+At startup, flux generates a SSH key. SSH public key can be found running `fluxctl identity --k8s-fwd-ns flux`.
+Copy this key and create a deploy key with write access on your GitHub repository.
+
 ### Sync cluster with Git repository
 
 Flux's main feature is the automated synchronisation between a version control repository and a cluster. In other words, if you make any changes to your repository, those changes are automatically deployed to your cluster.
@@ -31,11 +36,6 @@ Flux's main feature is the automated synchronisation between a version control r
 ```
 fluxctl sync --k8s-fwd-ns flux
 ```
-
-### Give write access
-
-At startup, flux generates a SSH key. SSH public key can be found running `fluxctl identity --k8s-fwd-ns flux`.
-Copy this key and create a deploy key with write access on your GitHub repository.
 
 ### Automated deployment of new container images
 
